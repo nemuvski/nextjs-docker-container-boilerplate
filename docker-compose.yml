@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.PROD
+    image: nextjs-prod-env
+    container_name: nextjs-prod-env
+    ports:
+      - '3000:3000'
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.DEV
+    image: nextjs-dev-env
+    container_name: nextjs-dev-env
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/workspace:rw
+    tty: true
+    logging:
+      driver: json-file
+      options:
+        max-size: '1m'
+        max-file: '1'

@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.swc/
+.git/
+
+*.md
+
+.dockerignore
+Dockerfile
+Dockerfile.DEV
+Dockerfile.PROD
+docker-compose.yml
+
+.idea/
+.vscode/

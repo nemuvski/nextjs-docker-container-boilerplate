@@ -1,0 +1,7 @@
+# [Layer] Development env
+FROM node:16-alpine
+WORKDIR /workspace
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN apk update && \
+    apk add --no-cache libc6-compat
